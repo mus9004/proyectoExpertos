@@ -1,0 +1,59 @@
+
+
+<div class="d-flex" [class.toggled]="classToggled" id="wrapper" style="height: 100vh;">
+
+  <!-- Sidebar -->
+  <app-sidebar [bntStyle]="sendStyle" (agregarElemento)="agregarE()" (salirSistema)="salir()" (agregarCarpeta)="carpetas()" (Perfil)="abrirPerfil()" (agregarProyecto)="Proyecto()"></app-sidebar>
+  <!-- /#sidebar-wrapper -->
+  
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+  
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom" style="position: relative;">
+      <button (click)="toggleField()" class="btn btn-primary" id="menu-toggle" style="position: relative;float: left;">Mostrar/Ocultar: Menu</button>
+      <div class="ml-1" ><button (click)="retroceder()" class="btn  btn-toolbar" style="margin-top: 0px;padding-top: 0px;border-color: turquoise; ">{{rutas}}</button></div>
+        
+      </nav>
+  
+      <div class="" style=" position: relative;" >
+        <div class="container" style=" border-color: rgb(33, 104, 97); background-color: #7ab97a;border-radius: 10px; position: fixed; height: 30%;width:57%;z-index: 99;margin-left: 5%;margin-top: 5%; box-shadow: 10px 10px 5px grey;"*ngIf="isShown" id="divshow" > 
+          <div class="w-100" style="height:20%;margin-top: 10%;margin-bottom: 0px;">
+            <input [(ngModel)]='textoDeInput' class="form-control w-100" style="display: block; margin : 0 auto;" maxlength="10" type="text"  id="carpetaArchivo" placeholder="Nombre de la carpera">
+          </div>
+          
+          <br><br>
+          <button (click)="crearProyectoCarpeta(false)" class="btn btn-light" style="float: right;" >Aceptar</button><button (click)="this.isShown = ! this.isShown;" class="btn btn-primary" style="float: right;">cancelar</button>
+        </div>
+        <div class="container" style=" border-color: rgb(33, 104, 97); background-color: #7ab97a;border-radius: 10px; position: fixed; height: 30%;width:57%;z-index: 99;margin-left: 5%;margin-top: 5%; box-shadow: 10px 10px 5px grey;"*ngIf="isShownP" id="divshowP" > 
+          <div class="w-100" style="height:20%;margin-top: 10%;margin-bottom: 0px;">
+          <input [(ngModel)]='textoDeInput' class="form-control w-100" maxlength="10" style="display: block; margin : 0 auto;" type="text"  id="carpetaArchivo" placeholder="Nombre de Proyecto">
+          </div>
+          <br><br>
+          <button (click)="crearProyectoCarpeta(true)" class="btn btn-light" style="float: right;" >Aceptar</button><button (click)="this.isShownP = ! this.isShownP;" class="btn btn-primary" style="float: right;">cancelar</button>
+        </div>
+
+          <div class="" style="overflow-y: scroll;height: 90vh;margin:auto;padding:5%; ">
+            <div class="row" id="xx">
+              <div *ngFor="let item of archivosActuales; " class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 mb-3">
+                <a routerLink="/editor" routerLinkActive="active">
+                <button class="btn "  style="text-align: center;background-color:none;font-size: medium;"><i class="fab fa-html5" style="font-size:200%;color: #de4b25;"></i><i class="fab fa-css3" style="font-size:200%;color:#006db5"></i><i class="fab fa-js" style="font-size:200%;color: #df9f26;"></i><br>{{item}}</button></a>
+              </div>
+              <div *ngFor="let item of carpetasActuales; " class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 mb-3">
+                <button class="btn " (click)="keys.push(item);recorrido(objetos[this.objetos.length-1][item],true);" style="text-align:center;"><i class="fas fa-folder-open" style="font-size:250%;color: rgba(204, 204, 46, 0.959); text-align: justify;"></i><br>{{item}}</button>
+              </div>
+            </div>
+          </div>
+      </div>
+    
+  </div>
+
+  
+  
+   <!--jQuery CDN - Slim version (=without AJAX) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- Popper.JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  <!-- jQuery Custom Scroller CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>

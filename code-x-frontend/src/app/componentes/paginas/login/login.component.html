@@ -1,0 +1,33 @@
+
+
+<div class="hero limiter wrap-login100" >
+  <div class="copia" >
+  <!--<form action="/action_page.php" style="padding-left: 30px;padding-right: 30px;border:1px solid #ccc; border-radius: 20px;background-color: #ffffff;box-shadow: 0 22px 30px 0 rgba(0,0,0,0.50);" >-->
+    <form [formGroup]='formularioLogin' style="background-color: #ffff; border-radius: 20px;box-shadow: 0 22px 30px 0 rgba(0,0,0,0.50);">
+    <div class="container">
+      <h1>login</h1>
+      <hr>
+
+      <label for="email"><b>Correo</b></label>
+      <input type="text" formControlName='email' placeholder="Correo" name="email" required style="border-radius: 20px;" pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$">
+      <label for="psw"><b>Password</b></label>
+      <input type="password" formControlName='password' placeholder="Password" name="psw" required style="border-radius: 20px;">
+
+
+
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Recuerdame
+      </label>
+
+      <p>Al crear una cuenta, usted acepta nuestro <a href="#" style="color:dodgerblue">Terminos & Privacidad</a>.</p>
+
+      <div class="clearfix">
+        <a   ><button (click)="onlogin('juan')" type="button" class="btn btn-success" style="border-radius: 20px;">Login </button></a>
+        <!--<a routerLink="/contenedor" routerLinkActive="active"><button type="button" class="btn btn-success" style="border-radius: 20px;">Login </button></a>-->
+
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+

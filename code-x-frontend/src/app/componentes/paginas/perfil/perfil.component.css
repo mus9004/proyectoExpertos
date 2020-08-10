@@ -1,0 +1,152 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box}
+
+/* Full-width input fields */
+input[type=text], input[type=password], input[type="date"] {
+width: 100%;
+padding: 15px;
+margin: 5px 0 15px 0;
+display: inline-block;
+border: none;
+background: #f1f1f1;
+}
+
+select {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  }
+
+input[type=text]:focus, input[type=password]:focus select:focus{
+background-color: rgb(236, 228, 228);;
+outline: none;
+}
+
+hr {
+border: 1px solid #f1f1f1;
+margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+background-color: #03055c;
+color: white;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 50%;
+opacity: 0.9;
+float: right;
+}
+.limiter {
+width: 100%;
+margin: 0 auto;
+}
+
+button:hover {
+/*opacity:100;*/
+background-color:green;
+cursor: pointer;
+box-shadow: 0 22px 30px 0 rgba(0,0,0,0.6);
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+padding: 14px 20px;
+background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+float: left;
+width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 1px;
+ 
+  
+}
+
+/* Clear floats */
+.clearfix::after {
+content: "";
+clear: both;
+display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+
+
+.hero{
+  background-image: linear-gradient(120deg, rgba(114, 124, 171, 0.699) 0%, rgba(38, 27, 85, 0.692) 100%),  url("../../../../assets/img/f2.svg");
+width: 99vw;
+height:97vh;
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+position: relative;
+overflow: hidden;
+}
+
+.wrap-login100 {
+padding-top: 0px;
+padding-left: 1px;
+padding-right: 1px;
+}
+.copia{
+  margin: auto;
+  width: 50%;
+}
+
+@media screen and (max-width: 650px) {
+  .cancelbtn, .signupbtn {
+      width: 100%;
+  }
+  .wrap-login100 {
+      padding-top: 0px;
+      padding-left: 5px;
+      padding-right: 5px;
+  }
+  form{
+      padding-left: 0px;
+      padding-right: 0px;
+  }
+  button{
+      width: 70%;
+  }
+  .container{
+      width: 90%;
+      margin-left: 1%;
+      margin-right: 1%;
+      padding-left: 0px;
+      padding-right: 0px;
+      
+  }
+  .copia{
+    margin: 0%;
+    width: 100%;
+    overflow: scroll;
+  }
+  body{
+    overflow-y: scroll;
+  }
+  .titulo{
+    font-size: large ;
+  }
+  input[type=text], input[type=password], input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 5px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    }
+
+}

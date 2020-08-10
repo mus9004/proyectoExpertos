@@ -1,0 +1,18 @@
+/*div{
+  background-image: url('../../../../assets/img/fake.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}*/
+
+.hero{
+  background-image: url('../../../../assets/img/fake.png');
+  background-color: blue;
+  width: 100vw;
+  height: 99vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+  }
