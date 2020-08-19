@@ -18,9 +18,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ModalComponent } from './componentes/elementos/modal/modal.component';
-
-
-
+import { MonacoEditorModule } from '@materia-ui/ngx-monaco-editor';
+import { SafePipe } from './componentes/paginas/safe.pipe';
 
 
 @NgModule({
@@ -35,6 +34,7 @@ import { ModalComponent } from './componentes/elementos/modal/modal.component';
     PerfilComponent,
     EditorComponent,
     ModalComponent,
+    SafePipe,
     
 
   ],
@@ -46,6 +46,7 @@ import { ModalComponent } from './componentes/elementos/modal/modal.component';
     ReactiveFormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
+    MonacoEditorModule
  
 
 

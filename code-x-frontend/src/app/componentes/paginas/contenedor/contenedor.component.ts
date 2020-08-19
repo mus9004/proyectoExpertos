@@ -1,13 +1,12 @@
 import { Component, OnInit, HostListener} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import sha256 from 'crypto-js/sha256';
-import hmacSHA512 from 'crypto-js/hmac-sha512';
-import * as CryptoJS from 'crypto-js';
+//66import hmacSHA512 from 'crypto-js/hmac-sha512';
+//import * as CryptoJS from 'crypto-js';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
-
-
 import { isObject } from 'util';
+
 
 
 @Component({
@@ -30,12 +29,14 @@ export class ContenedorComponent implements OnInit {
   crearProyectoCarpeta(campo) {
     this.isShown = false;
     this.isShownP =false;
-    let x =sha256(Date.now())
+    let x =Date.now().toString()
+    
+    
     if (campo) {
-      this.agregar(this.keys.slice(),this.persona.contenedor,this.textoDeInput,x.words[0])
+      this.agregar(this.keys.slice(),this.persona.contenedor,this.persona.proyectos,this.textoDeInput,x)
       this.actualizar(this.persona)
     } else {
-      this.agregar(this.keys.slice(),this.persona.contenedor,this.textoDeInput,{})
+      this.agregar(this.keys.slice(),this.persona.contenedor,this.persona.proyectos,this.textoDeInput,{})
       this.actualizar(this.persona)
     }
   }  
@@ -57,6 +58,7 @@ export class ContenedorComponent implements OnInit {
   persona: any = {};
   carpetasActuales=[];
   archivosActuales=[];
+  elementoFor=''
   objetos=[];
   keys=[];
   rutas="";
@@ -84,11 +86,11 @@ export class ContenedorComponent implements OnInit {
   }
 
   retroceder(){
-    //console.log(this.keys.length)
+
     if (this.keys.length>1) {
       this.objetos.pop()
       this.keys.pop()
-      console.log(this.objetos.length)
+
       this.recorrido(this.objetos[this.objetos.length-1],false)
     }
   }
@@ -101,7 +103,7 @@ export class ContenedorComponent implements OnInit {
         this.carpetasActuales.push(key);
       }else {
         this.archivosActuales.push(key);
-       // console.log(false,key)
+
       }
     }
     this.ruta()
@@ -116,41 +118,78 @@ export class ContenedorComponent implements OnInit {
       for (let i = 0; i < llaves.length; i++) {
         const element = llaves[i];
        L_llaves+=['+element+']
-        console.log( L_llaves)
+        //.log( L_llaves)
       }
     }
     //let x=['contenedor']
     //let x1=['contenedor']
-    //console.log(x)
-   // console.log(this.persona)
+
   }
 //-------------------------------agrega elemento a la Base de Datos-----------------------
   agregarE(){
-    this.agregar(this.keys.slice(),this.persona.contenedor,'prueba.html',{})
+    this.agregar(this.keys.slice(),this.persona.contenedor,this.persona.proyectos,'prueba.html',{})
     this.actualizar(this.persona)
   }
 
-  agregar(llaves,objeto,elemento,contenido){
+  agregar(llaves,objeto,proyectos,elemento,contenido){
     llaves.shift()
     if (llaves.length>1) {
-      this.agregar(llaves,objeto[llaves[0]],elemento,contenido)
+      this.agregar(llaves,objeto[llaves[0]],proyectos,elemento,contenido)
     }else{
+
       if (llaves.length==0) {
-        objeto[elemento]=contenido
-      } else{ objeto[llaves[0]][elemento]=contenido }
+        objeto[elemento]=contenido 
+        this.elementoFor=elemento;
+        //console.log(elemento,contenido,objeto[elemento])
+        if (isObject(objeto[elemento]))
+          {this.carpetasActuales.push(elemento)}
+          else{
+            this.archivosActuales.push(elemento);
+            proyectos[contenido]={"html": "","css": "","js": ""};
+          }
+      } else{ 
+        objeto[llaves[0]][elemento]=contenido 
+        this.elementoFor=elemento;
+        if (isObject(objeto[llaves[0]][elemento]))
+          {this.carpetasActuales.push(elemento)}
+          else{
+            this.archivosActuales.push(elemento);
+            proyectos[contenido]={"html": "","css": "","js": ""};
+          }
+      }
     }
   }
 
   actualizar(objeto) {
+    console.log(objeto);
+    
     const headers = new HttpHeaders()
     .set('Content-Type', 'application/json');
     this.httpClient.put(`${this.backendHost}/usuarios/update/${this.persona._id}`,objeto)
     .subscribe((res: any) => {
-      console.log(res);
+     
       if ((res.nModified==0) && (res.ok==1) ) {
         this.toastr.warning('Code-x-Error', 'Nombre de carpeta ya existe');
+      }else{
+        this.toastr.success('Code-x-correcto', 'Actualizado');
+  
+        /*if (isObject(objeto[this.elementoFor]))
+          {this.carpetasActuales.push(this.elementoFor)}
+          else{this.archivosActuales.push(this.elementoFor);}*/
       }
     });
+  }
+
+  editor(clave){
+     let claves=[]
+    claves=this.keys.slice()
+    claves.shift();
+    console.log(this.objetos)
+    console.log(this.objetos[this.objetos.length-1][clave]);
+    localStorage.setItem("clave",this.objetos[this.objetos.length-1][clave])
+    localStorage.setItem('claves',JSON.stringify(claves))
+    this.router.navigate(['/editor']);
+    
   }
 
   //-------------------------ajuse de tamaño ventana y boton de mostrar----------------------
@@ -171,7 +210,7 @@ export class ContenedorComponent implements OnInit {
       this.classToggled =false;
       this.sendStyle="0rem";
     }
-    console.log(this.innerWidth)
+
   }
   @HostListener("window:load", ["$event"])
     closewindow($event) {

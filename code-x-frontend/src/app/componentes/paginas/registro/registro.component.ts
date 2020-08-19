@@ -63,6 +63,7 @@ export class RegistroComponent implements OnInit {
       let arreglo=Object()
       arreglo=this.formularioReg.value;
       arreglo.contenedor={}
+      arreglo.proyectos={}
      // console.log(arreglo)
       this.httpClient.post(`${this.backendHost}/usuarios`, arreglo)
       .subscribe(( res: any) => {

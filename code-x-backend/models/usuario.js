@@ -15,7 +15,14 @@ var esquema= new mongoose.Schema({
         trim:true,
         unique:true,
         default:{}
+    },
+    proyectos:{
+        type:mongoose.SchemaTypes.Mixed,
+        trim:true,
+        unique:true,
+        default:{}
     }
+
 },{ minimize: false });
 
 module.exports=mongoose.model('usuarios', esquema);

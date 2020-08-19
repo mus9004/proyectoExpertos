@@ -34,11 +34,11 @@
 
           <div class="" style="overflow-y: scroll;height: 90vh;margin:auto;padding:5%; ">
             <div class="row" id="xx">
-              <div *ngFor="let item of archivosActuales; " class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 mb-3">
-                <a routerLink="/editor" routerLinkActive="active">
+              <div *ngFor="let item of archivosActuales;" class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 mb-3">
+                <a (click)="editor(item)" >
                 <button class="btn "  style="text-align: center;background-color:none;font-size: medium;"><i class="fab fa-html5" style="font-size:200%;color: #de4b25;"></i><i class="fab fa-css3" style="font-size:200%;color:#006db5"></i><i class="fab fa-js" style="font-size:200%;color: #df9f26;"></i><br>{{item}}</button></a>
               </div>
-              <div *ngFor="let item of carpetasActuales; " class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 mb-3">
+              <div *ngFor="let item of carpetasActuales;" class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 mb-3">
                 <button class="btn " (click)="keys.push(item);recorrido(objetos[this.objetos.length-1][item],true);" style="text-align:center;"><i class="fas fa-folder-open" style="font-size:250%;color: rgba(204, 204, 46, 0.959); text-align: justify;"></i><br>{{item}}</button>
               </div>
             </div>
@@ -47,7 +47,6 @@
     
   </div>
 
-  
   
    <!--jQuery CDN - Slim version (=without AJAX) -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

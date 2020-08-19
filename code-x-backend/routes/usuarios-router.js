@@ -19,7 +19,8 @@ router.post('/', function(req, res) {
             email:req.body.email,
             password:bcrypt.hashSync(req.body.password),
             genero: req.body.genero,
-            contenedor:req.body.contenedor
+            contenedor:req.body.contenedor,
+            proyectos:req.body.proyectos
         }
     )  
     
@@ -87,7 +88,8 @@ router.post('/:id',function(req,res){
             email:req.body.email,
             password:bcrypt.hashSync(req.body.password),
             genero:req.body.genero,
-            contenedor:req.body.contenedor
+            contenedor:req.body.contenedor,
+            proyectos:req.body.proyectos
         }
     ).then(result=>{
         res.send(result);
@@ -103,7 +105,10 @@ router.post('/:id',function(req,res){
 router.put('/update/:id',function(req,res){
     usuario.updateOne(
         { _id:req.params.id }, 
-        {contenedor:req.body.contenedor }
+        {
+            contenedor:req.body.contenedor,
+            proyectos:req.body.proyectos 
+        }
     ).then(result=>{
         res.send(result);
         res.end;
@@ -113,6 +118,8 @@ router.put('/update/:id',function(req,res){
     });
     
 });
+
+
 
 /*router.route("/update").put(function(req, res) {
     details.updateOne(
@@ -137,7 +144,7 @@ router.put('/update/:id',function(req,res){
 
 
 router.put('/update/:id',function(req,res){
-    usuario.updateOne(
+    usuario.update(
         {
             _id:req.params.id
         },
@@ -147,12 +154,15 @@ router.put('/update/:id',function(req,res){
             email:req.body.email,
             password:bcrypt.hashSync(req.body.password),
             genero: req.body.genero,
-            contenedor:req.body.contenedor  
+            contenedor:req.body.contenedor,
+            proyectos:req.body.proyectos  
         }}
     ).then(result=>{
+        console.log(result);
         res.send(result);
         res.end;
     }).catch(error=>{
+        console.log(result);
         res.send(error);
         res.end;
     });

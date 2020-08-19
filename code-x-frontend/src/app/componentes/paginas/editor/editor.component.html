@@ -1,2 +1,61 @@
-<div class="hero">
+
+<div class="container-fluid" style="height: 100%; padding-left: 0;padding-right: 0;position: absolute;">
+    <nav class="navbar navbar-inverse " style="background-color: #1e1d1f;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="sidebar-heading"><img src="../../../../assets/img/logo-removebg-preview (2).png" title="blur" class="blur" style="margin-bottom: 15px;margin: 0;height: 50px;"> </div>
+            </div>
+            <div style="float: right;">
+                <button type="button" class="btn btn-primary" style="margin-right: 10px;" (click)="guardar()">Guardar</button>
+                <button type="button" class="btn btn-primary" (click)="salir()">Salir</button>
+            </div>
+        </div>
+    </nav>
+    <div class="row" style="background-color: #333235;margin: 0;height:46.9%;">
+        <div class="  col-xl-4 col-lg-4" style="border: 0px;border-color: black;padding: 5px;" >
+            <div class="topnav" style="height: 10%; background-color: #1a1919;">
+                <div class="dropdown" >
+                    <button class="dropbtn">></button>
+                    <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                    </div>
+                </div>
+            </div>
+                
+            <ngx-monaco-editor (change)="actualizar()" style="height:90%;width: 100%;margin: 0;padding: 0; " [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
+        </div>
+        <div class="  col-xl-4 col-lg-4"  style="border: 0px;border-color: black;padding: 5px;">
+            <div class="topnav" style="height: 10%; background-color: #1a1919;">
+            <div class="dropdown" >
+                <button class="dropbtn">></button>
+                <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+                </div>
+            </div>
+        </div>
+            <ngx-monaco-editor (change)="actualizar();" style="height:90%;width: 100%; border: 0px;margin: 0;" [options]="editorOptions1" [(ngModel)]="code1"></ngx-monaco-editor>
+        </div>
+        <div class="   col-xl-4 col-lg-4"  style="border: 0px;border-color: black;padding: 5px;">
+            <div class="topnav" style="height: 10%; background-color: #1a1919;">
+            <div class="dropdown" >
+                <button class="dropbtn">></button>
+                <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+                </div>
+            </div>
+            </div>
+            <ngx-monaco-editor (change)="actualizar();" style="height:90%;width: 100%; border: 0px;margin: 0;" [options]="editorOptions2" [(ngModel)]="code2"></ngx-monaco-editor>
+        </div>
+    
+    </div>
+        <div class=" col-xl-12 col-lg-12" style="border: 0px;border-color: black;margin: 0;padding: 0;height:46.9%;">
+            <!--<ngx-monaco-editor style="height:100%;width: 100%; border: 0px;margin: 0;padding:0;" [options]="editorOptions1" [(ngModel)]="code1"></ngx-monaco-editor>-->
+            <iframe #iframe id="prentar"  [srcdoc]="ht | safe: 'html'"  style="height:100%;width: 100%; border: 0px;margin: 0;padding:0;background-color: #1d1e22;"> </iframe>
+        </div>
 </div>
