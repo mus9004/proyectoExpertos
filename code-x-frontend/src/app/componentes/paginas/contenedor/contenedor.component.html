@@ -3,11 +3,11 @@
 <div class="d-flex" [class.toggled]="classToggled" id="wrapper" style="height: 100vh;">
 
   <!-- Sidebar -->
-  <app-sidebar [bntStyle]="sendStyle" (agregarElemento)="agregarE()" (salirSistema)="salir()" (agregarCarpeta)="carpetas()" (Perfil)="abrirPerfil()" (agregarProyecto)="Proyecto()"></app-sidebar>
+  <app-sidebar [bntStyle]="sendStyle" (abrirProyecto)="proyectos1()" (agregarElemento)="agregarE()" (salirSistema)="salir()" (agregarCarpeta)="carpetas()" (Perfil)="abrirPerfil()" (agregarProyecto)="Proyecto()"></app-sidebar>
   <!-- /#sidebar-wrapper -->
   
   <!-- Page Content -->
-  <div id="page-content-wrapper">
+  <div id="page-content-wrapper" style=" min-height: 100vh;z-index: 1;">
   
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom" style="position: relative;">
       <button (click)="toggleField()" class="btn btn-primary" id="menu-toggle" style="position: relative;float: left;">Mostrar/Ocultar: Menu</button>
@@ -15,7 +15,7 @@
         
       </nav>
   
-      <div class="" style=" position: relative;" >
+      <div class="" style=" position: relative;" style="max-height: 100%;" >
         <div class="container" style=" border-color: rgb(33, 104, 97); background-color: #7ab97a;border-radius: 10px; position: fixed; height: 30%;width:57%;z-index: 99;margin-left: 5%;margin-top: 5%; box-shadow: 10px 10px 5px grey;"*ngIf="isShown" id="divshow" > 
           <div class="w-100" style="height:20%;margin-top: 10%;margin-bottom: 0px;">
             <input [(ngModel)]='textoDeInput' class="form-control w-100" style="display: block; margin : 0 auto;" maxlength="10" type="text"  id="carpetaArchivo" placeholder="Nombre de la carpera">
@@ -32,7 +32,7 @@
           <button (click)="crearProyectoCarpeta(true)" class="btn btn-light" style="float: right;" >Aceptar</button><button (click)="this.isShownP = ! this.isShownP;" class="btn btn-primary" style="float: right;">cancelar</button>
         </div>
 
-          <div class="" style="overflow-y: scroll;height: 90vh;margin:auto;padding:5%; ">
+          <div class="" style="overflow-y: scroll;min-height:94vh;margin:auto;padding:5%; ">
             <div class="row" id="xx">
               <div *ngFor="let item of archivosActuales;" class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 mb-3">
                 <a (click)="editor(item)" >
@@ -43,9 +43,40 @@
               </div>
             </div>
           </div>
+         
+          
+         
       </div>
     
   </div>
+
+  <ng-template #modalProyectos let-modal>
+    <div class="modal-header" style="background-color: #563D7C;">
+      <h4 class="modal-title" id="modal-basic-title">Listas de Proyectos</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div id="zona-productos" class="card p-3" style="border-radius: 12px; overflow-y: scroll;">
+  <!---------------------------------------------------------------------------------->
+        <div >
+
+          <div class="" >
+            
+            <a *ngFor="let item of listaProyectos;" (click)="modal.close('Cerrar');editor(item['titulo'])" >
+              <button class="btn "  style="margin-left: 20px; text-align: center;background-color:none;font-size: medium;"><i class="fab fa-html5" style="font-size:200%;color: #de4b25;"></i><i class="fab fa-css3" style="font-size:200%;color:#006db5"></i><i class="fab fa-js" style="font-size:200%;color: #df9f26;"></i><br>{{item['titulo']}}</button></a>
+          
+          </div>
+        </div>
+  <!---------------------------------------------------------------------------------->
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Cerrar')">Cerrar</button>
+    </div>
+  </ng-template>
+ 
 
   
    <!--jQuery CDN - Slim version (=without AJAX) -->

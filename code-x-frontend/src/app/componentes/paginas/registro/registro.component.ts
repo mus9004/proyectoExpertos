@@ -19,9 +19,9 @@ export class RegistroComponent implements OnInit {
     nombre: new FormControl('', [Validators.required, Validators.maxLength(10)]),
     apellido: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required]),
-    confirmarPassword: new FormControl('', [Validators.required]),
-    genero: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]),
+    confirmarPassword: new FormControl('', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]),
+    genero: new FormControl('Masculino', [Validators.required]),
     //contenedor:any=new Object(),
   });
 
@@ -48,22 +48,26 @@ export class RegistroComponent implements OnInit {
   get contenedor() {
     return this.formularioReg.get('contenedor');
   }
-  /*
-  /*get pais() {
-    return this.formularioRegistro.get('pais');
-  }*/
+  
 
   ngOnInit(): void {
   }
+  valida(group:FormGroup){
+    let pass = this.formularioReg.get('password').value;
+    let confirmPass = this.formularioReg.get('confirmarPassword').value;
+  return pass == confirmPass ? true :false   
+  } 
 
   guardar() {
-    console.log(this.formularioReg.valid);
-
-    if (this.formularioReg.valid ) {
+    console.log(this.formularioReg.valid );
+    console.log(this.valida(this.formularioReg));
+   
+    if (this.formularioReg.valid && this.valida(this.formularioReg) ) {
       let arreglo=Object()
       arreglo=this.formularioReg.value;
       arreglo.contenedor={}
       arreglo.proyectos={}
+      arreglo.snippet=""
      // console.log(arreglo)
       this.httpClient.post(`${this.backendHost}/usuarios`, arreglo)
       .subscribe(( res: any) => {

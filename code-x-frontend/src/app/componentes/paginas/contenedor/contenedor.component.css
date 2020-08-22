@@ -1,5 +1,12 @@
 
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+html {
+  height: 100%;
+}
+body {
+ height: 100%;
+ margin-top: 0px;
+}
 #wrapper {
     overflow-x: hidden;
  }
@@ -12,6 +19,24 @@
   -o-transition: margin .25s ease-out;
   transition: margin .25s ease-out;
 }
+
+.horizontal {
+  writing-mode: horizontal-tb;
+  height: 40vh;
+}
+
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+}
+.card {
+  display: inline-block;
+  
+}
+
+
 
 #sidebar-wrapper .sidebar-heading {
   padding: 0.875rem 1.25rem;

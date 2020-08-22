@@ -12,6 +12,7 @@ export class SidebarComponent implements OnInit {
   @Output() salirSistema= new EventEmitter()
   @Output() agregarCarpeta= new EventEmitter()
   @Output() agregarProyecto= new EventEmitter()
+  @Output() abrirProyecto= new EventEmitter()
   @Output() Perfil= new EventEmitter()
   @Input() bntStyle:string="0";
 
@@ -34,6 +35,9 @@ export class SidebarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+  proyectos(){
+    this.abrirProyecto.emit()
   }
 
 }

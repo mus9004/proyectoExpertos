@@ -1,11 +1,12 @@
-import { Component, OnInit, HostListener} from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import sha256 from 'crypto-js/sha256';
 //66import hmacSHA512 from 'crypto-js/hmac-sha512';
 //import * as CryptoJS from 'crypto-js';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
-import { isObject } from 'util';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { isObject, isString, isNull } from 'util';
 
 
 
@@ -15,6 +16,9 @@ import { isObject } from 'util';
   styleUrls: ['./contenedor.component.css']
 })
 export class ContenedorComponent implements OnInit {
+
+  @ViewChild ('modalProyectos') modalProyectos;
+
   isShown=false;
   isShownP=false;
   textoDeInput: string = null
@@ -30,21 +34,28 @@ export class ContenedorComponent implements OnInit {
     this.isShown = false;
     this.isShownP =false;
     let x =Date.now().toString()
-    
-    
-    if (campo) {
-      this.agregar(this.keys.slice(),this.persona.contenedor,this.persona.proyectos,this.textoDeInput,x)
-      this.actualizar(this.persona)
-    } else {
-      this.agregar(this.keys.slice(),this.persona.contenedor,this.persona.proyectos,this.textoDeInput,{})
-      this.actualizar(this.persona)
+    if (isNull( this.textoDeInput) || (this.textoDeInput.startsWith(' '))  ) {
+      this.toastr.warning('Code-x-Error', 'Error en el nombre de Carpeta/Proyecto');
+    } else{
+      
+      if (campo) {
+        this.agregar(this.keys.slice(),this.persona.contenedor,this.persona.proyectos,this.textoDeInput,x)
+        this.actualizar(this.persona)
+        this.leerProyecto()
+      } else {
+        this.agregar(this.keys.slice(),this.persona.contenedor,this.persona.proyectos,this.textoDeInput,{})
+        this.actualizar(this.persona)
+        this.leerProyecto()
+      }
+
     }
+
   }  
   abrirPerfil(){
     this.router.navigate(["/perfil"])
   }     
   
-  constructor(private httpClient:HttpClient,private toastr: ToastrService,private router: Router) {
+  constructor(private httpClient:HttpClient,private toastr: ToastrService,private router: Router,private modalService: NgbModal) {
     this.leerDatos()
   }
 
@@ -62,6 +73,8 @@ export class ContenedorComponent implements OnInit {
   objetos=[];
   keys=[];
   rutas="";
+  listaProyectos=[]
+  
   ngOnInit() {
 
   }
@@ -74,6 +87,7 @@ export class ContenedorComponent implements OnInit {
         this.persona=res;
         this.keys.push('/')
         this.recorrido(this.persona.contenedor,true)
+        this.leerProyecto()
     });
   }
 
@@ -84,13 +98,19 @@ export class ContenedorComponent implements OnInit {
       this.rutas+=element+'/'
     }
   }
+  leerProyecto(){
+    this.listaProyectos=[]
+    for (const key in this.persona.proyectos) {
+      const element =this.persona.proyectos[key];
+      this.listaProyectos.push(element) 
+  }
+  }
 
   retroceder(){
 
     if (this.keys.length>1) {
       this.objetos.pop()
       this.keys.pop()
-
       this.recorrido(this.objetos[this.objetos.length-1],false)
     }
   }
@@ -103,7 +123,6 @@ export class ContenedorComponent implements OnInit {
         this.carpetasActuales.push(key);
       }else {
         this.archivosActuales.push(key);
-
       }
     }
     this.ruta()
@@ -140,12 +159,11 @@ export class ContenedorComponent implements OnInit {
       if (llaves.length==0) {
         objeto[elemento]=contenido 
         this.elementoFor=elemento;
-        //console.log(elemento,contenido,objeto[elemento])
         if (isObject(objeto[elemento]))
           {this.carpetasActuales.push(elemento)}
           else{
             this.archivosActuales.push(elemento);
-            proyectos[contenido]={"html": "","css": "","js": ""};
+            proyectos[contenido]={"html": "","css": "","js": "","titulo":elemento,"llave":contenido};
           }
       } else{ 
         objeto[llaves[0]][elemento]=contenido 
@@ -154,28 +172,21 @@ export class ContenedorComponent implements OnInit {
           {this.carpetasActuales.push(elemento)}
           else{
             this.archivosActuales.push(elemento);
-            proyectos[contenido]={"html": "","css": "","js": ""};
+            proyectos[contenido]={"html": "","css": "","js": "","titulo":elemento,"llave":contenido};
           }
       }
     }
   }
 
   actualizar(objeto) {
-    console.log(objeto);
-    
     const headers = new HttpHeaders()
     .set('Content-Type', 'application/json');
     this.httpClient.put(`${this.backendHost}/usuarios/update/${this.persona._id}`,objeto)
     .subscribe((res: any) => {
-     
       if ((res.nModified==0) && (res.ok==1) ) {
         this.toastr.warning('Code-x-Error', 'Nombre de carpeta ya existe');
       }else{
         this.toastr.success('Code-x-correcto', 'Actualizado');
-  
-        /*if (isObject(objeto[this.elementoFor]))
-          {this.carpetasActuales.push(this.elementoFor)}
-          else{this.archivosActuales.push(this.elementoFor);}*/
       }
     });
   }
@@ -184,8 +195,6 @@ export class ContenedorComponent implements OnInit {
      let claves=[]
     claves=this.keys.slice()
     claves.shift();
-    console.log(this.objetos)
-    console.log(this.objetos[this.objetos.length-1][clave]);
     localStorage.setItem("clave",this.objetos[this.objetos.length-1][clave])
     localStorage.setItem('claves',JSON.stringify(claves))
     this.router.navigate(['/editor']);
@@ -224,5 +233,12 @@ export class ContenedorComponent implements OnInit {
     this.router.navigate(["/landing"])
   }
 
+  proyectos1(){
+    this.modalService.open(this.modalProyectos, {size: 'xl'})
+  }
+  
+  cerrarModal(){
+    this.modalService.open(this.modalProyectos, {size: 'xl'})
+  }
   
 }

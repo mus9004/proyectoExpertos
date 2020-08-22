@@ -71,10 +71,18 @@ display: table;
 
 /* Change styles for cancel button and signup button on extra small screens */
 
+.padre {
+    background-color: #56abbf;
+    height: 100vh;
+    /*IMPORTANTE*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 .hero{
-background-image: linear-gradient(120deg, rgba(114, 124, 171, 0.699) 0%, rgba(38, 27, 85, 0.692) 100%),  url("../../../../assets/img/f2.svg");
-
+/*background-image: linear-gradient(120deg, rgba(114, 124, 171, 0.699) 0%, rgba(38, 27, 85, 0.692) 100%),  url("../../../../assets/img/f2.svg");*/
+background-color: #56abbf;
 width: 100vw;
 height: 99vh;
 background-repeat: no-repeat;

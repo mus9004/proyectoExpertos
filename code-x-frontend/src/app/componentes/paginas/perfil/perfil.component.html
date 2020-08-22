@@ -1,39 +1,45 @@
-<body class="hero limiter wrap-login100 ">
-  <div class="copia"  >
-  <form action="/action_page.php" style="padding-left: 30px;padding-right: 30px;border:1px solid #ccc; border-radius: 20px;background-color: #ffffff;box-shadow: 0 22px 30px 0 rgba(0,0,0,0.50);" >
+<body class="padre ">
+  <div class="container copia" >
+  <form [formGroup]='formularioReg'  style="padding-left: 30px;padding-right: 30px;border:1px solid #ccc; border-radius: 20px;background-color: #ffffff;box-shadow: 0 22px 30px 0 rgba(0,0,0,0.50);" >
     <div class="container">
-      <h1 class="titulo">Perfil de usuarios</h1>
-
+      <h3 class="texto">Perfil de usuarios</h3>
       <hr>
-
-
-      <input type="text" placeholder="Jose" name="text" required style="border-radius: 20px;">
-
-      <input type="text" placeholder="Cruz" name="email" required style="border-radius: 20px;">
-
-
-
-      <input type="text" placeholder="Correo" name="email" required style="border-radius: 20px;">
-
-      <input type="password" placeholder="Password" name="psw" required style="border-radius: 20px;">
-
-      <input type="text" placeholder="Numero de telefono" id="psw" required style="border-radius: 20px;">
-
-      <input type="date" required style="border-radius: 20px; content:none;  width: 200px;">
-
-
-      <select name="" id="" style="border-radius: 20px;" style="width: 110px;" >
+      <input formControlName='nombre' type="text" placeholder="Nombre" name="text" required style="border-radius: 20px;">
+      <input formControlName='apellido' type="text" placeholder="Apellido" name="apellido" required style="border-radius: 20px;">
+      <input formControlName='email' type="text" placeholder="Correo" name="correo" required style="border-radius: 20px;" data-toggle="tooltip"  title="Ingrese la dirección de su Email" pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$">
+      
+      <input  type="hidden" >
+      <select formControlName='genero' style="border-radius: 20px;"  >
           <option disabled selected>Genero</option>
-          <option value="0">Masculino</option>
-          <option value="0">Femenino</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Femenino">Femenino</option>
       </select>
-
-
       <div class="clearfix">
-        <a routerLink="/contenedor" routerLinkActive="active"> <button type="button" class="btn btn-warning" style="border-radius: 20px;">Actualizar</button></a>
-        <a routerLink="/contenedor" routerLinkActive="active">  <button type="submit" class="btn btn-success" style="border-radius: 20px; background-color: crimson;">Cancelar</button></a>
+        
+        <button (click)="guardar()" type="button" class="btn btn-success" style="border-radius: 20px;margin-left: 5px;">Actualizar</button>
+        <button (click)="cambiarPws()" type="button" class="btn btn-success" style="border-radius: 20px;margin-left: 5px;">Cambiar password</button>
+        <button (click)="salir()" type="button" class="btn btn-success" style="border-radius: 20px;margin-left: 5px;">Salir</button>
       </div>
     </div>
   </form>
   </div>
+
+  <ng-template #modalPassword let-modal>
+    <div class="modal-header" >
+      <h4 class="modal-title" id="modal-basic-title">Cambiar Password</h4>
+     
+    </div>
+    <div class="modal-body">
+      <div id="zona-productos" class="card p-3" style="border-radius: 12px;">
+  <!---------------------------------------------------------------------------------->
+  <input type="password" [(ngModel)]="pass" name="" (click)="$event.target.select()" placeholder="Password" name="psw" required style="border-radius: 20px;">
+  <input (click)="$event.target.select()" [(ngModel)]="confirmar" name="" value="dkljslkdjfks" style=" outline: none;" [ngStyle]="{'border': !valida() ? 'red solid': 'green'}"  type="password" placeholder="Confirmar password" id="psw" required style="border-radius: 20px;">
+  <!---------------------------------------------------------------------------------->
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Cerrar')">Cerrar</button>
+    </div>
+  </ng-template>
+
   </body>

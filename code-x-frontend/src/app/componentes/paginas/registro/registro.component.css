@@ -80,6 +80,17 @@ display: table;
 
 /* Change styles for cancel button and signup button on extra small screens */
 
+.padre {
+  background-color: #56abbf;
+  height: 100vh;
+  /*IMPORTANTE*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+select{
+  width: 40%;
+}
 
 .hero{
   background-image: linear-gradient(120deg, rgba(114, 124, 171, 0.699) 0%, rgba(38, 27, 85, 0.692) 100%),  url("../../../../assets/img/f2.svg");
@@ -100,7 +111,7 @@ padding-right: 15px;
 }
 
 .copia{
-  margin: auto;width: 50%;
+  margin: auto;width: 60%;
 }
 @media screen and (max-width: 1000px) {
   .cancelbtn, .signupbtn {
@@ -123,7 +134,7 @@ padding-right: 15px;
       margin-top: 1%;
       padding-left: 0px;
       padding-right: 0px;
-      overflow: scroll;
+      
   }
   .texto{
     font-size: large;
@@ -136,5 +147,14 @@ padding-right: 15px;
     display: inline-block;
     border: none;
     background: #f1f1f1;
+    
     }
+    input:focus{
+      outline: none;
+    }
+
+    select{
+      width: 70%;
+    }
+
 }

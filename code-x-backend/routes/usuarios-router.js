@@ -20,7 +20,8 @@ router.post('/', function(req, res) {
             password:bcrypt.hashSync(req.body.password),
             genero: req.body.genero,
             contenedor:req.body.contenedor,
-            proyectos:req.body.proyectos
+            proyectos:req.body.proyectos,
+            snippet:req.body.snippet
         }
     )  
     
@@ -87,9 +88,8 @@ router.post('/:id',function(req,res){
             apellido: req.body.apellido,
             email:req.body.email,
             password:bcrypt.hashSync(req.body.password),
-            genero:req.body.genero,
-            contenedor:req.body.contenedor,
-            proyectos:req.body.proyectos
+            genero:req.body.genero
+           
         }
     ).then(result=>{
         res.send(result);
@@ -107,7 +107,8 @@ router.put('/update/:id',function(req,res){
         { _id:req.params.id }, 
         {
             contenedor:req.body.contenedor,
-            proyectos:req.body.proyectos 
+            proyectos:req.body.proyectos,
+            snippet:req.body.snippet 
         }
     ).then(result=>{
         res.send(result);

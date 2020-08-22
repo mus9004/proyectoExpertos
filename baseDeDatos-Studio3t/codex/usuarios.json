@@ -1,0 +1,209 @@
+{ 
+    "_id" : ObjectId("5f3f5fdfa7d1634be0c303e3"), 
+    "nombre" : "gladis", 
+    "apellido" : "sandoval", 
+    "email" : "123@gmail.com", 
+    "password" : "$2a$10$7RETXU2/DWUfqCGlbE.HzuFGafMe60ctpx9e4JqqOa4tsSSq7FZWm", 
+    "genero" : "Masculino", 
+    "contenedor" : {
+        "66" : {
+            "66" : "1597988885054", 
+            "saddddssss" : "1598068838448"
+        }, 
+        "555553333" : "1598071616123", 
+        "eeee" : "1597988872599", 
+        "null" : {
+            "555" : "1598069512241", 
+            "otroNuevo5" : "1598071159212"
+        }, 
+        " " : {
+            "otroNuevo" : "1598071111527"
+        }, 
+        "nuevo" : "1598064853313", 
+        "nuevoNuevo" : "1598064867678", 
+        "ddd" : "1598066645860", 
+        "dddddd" : "1598066652999", 
+        "sa" : "1598068818372", 
+        "sadddd" : "1598068824846", 
+        "ttt" : "1598068906249", 
+        "n1" : "1598072080266", 
+        "xxxx" : "1598073182372", 
+        "httt" : "1598073355353", 
+        "uuuyy" : "1598090603516", 
+        "uuuuuuu" : "1598090620714"
+    }, 
+    "proyectos" : {
+        "1597988872599" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : ""
+        }, 
+        "1597988885054" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : ""
+        }, 
+        "1598062199471" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : null
+        }, 
+        "1598064853313" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "nuevo"
+        }, 
+        "1598064867678" : {
+            "html" : "cbncvbncvb", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "nuevoNuevo"
+        }, 
+        "1598066645860" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "ddd"
+        }, 
+        "1598066652999" : {
+            "html" : "sdfgsdfgsdfg", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "dddddd"
+        }, 
+        "1598068818372" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "sa"
+        }, 
+        "1598068824846" : {
+            "html" : "<h1>I am a headline made with HTML</h1>\r\n<p>And I am a simple text paragraph. The color of this text is styled with CSS. Click the button below to remove me through the power JavaScript.</p>\r\n<button>Hide the text above</button>\r\n<p>dfgdfgdf</p>", 
+            "css" : "body {\r\n\tfont-family: sans-serif;\r\n\ttext-align: center;\r\n\tpadding: 3rem;\r\n\tfont-size: 1.125rem;\r\n\tline-height: 1.5;\r\n\ttransition: all 725ms ease-in-out;\r\n}\r\n\r\nh1 {\r\n\tfont-size: 2rem;\r\n\tfont-weight: bolder;\r\n\tmargin-bottom: 1rem;\r\n}\r\n\r\np {\r\n\tmargin-bottom: 1rem;\r\n\tcolor: tomato;\r\n}\r\n\r\nbutton {\r\n\tcursor: pointer;\r\n\tappearance: none;\r\n\tborder-radius: 4px;\r\n\tfont-size: 1.25rem;\r\n\tpadding: 0.75rem 1rem;\r\n\tborder: 1px solid navy;\r\n\tbackground-color: dodgerblue;\r\n\tcolor: white;\r\n}", 
+            "js" : "$('button').on('click', function() {\r\n\t$('p').css('opacity', 0);\r\n});", 
+            "titulo" : "sadddd"
+        }, 
+        "1598068838448" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "saddddssss"
+        }, 
+        "1598068906249" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "ttt"
+        }, 
+        "1598069512241" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "555"
+        }, 
+        "1598071111527" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "otroNuevo"
+        }, 
+        "1598071159212" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "otroNuevo5"
+        }, 
+        "1598071616123" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "555553333"
+        }, 
+        "1598072080266" : {
+            "html" : "ju9iqwe qwe ", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "n1", 
+            "llave" : "1598072080266"
+        }, 
+        "1598073182372" : {
+            "html" : "xxxxx", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "xxxx", 
+            "llave" : "1598073182372"
+        }, 
+        "1598073355353" : {
+            "html" : "weserwer", 
+            "css" : "werwerwe", 
+            "js" : "werwewew", 
+            "titulo" : "httt", 
+            "llave" : "1598073355353"
+        }, 
+        "1598090603516" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "uuuyy", 
+            "llave" : "1598090603516"
+        }, 
+        "1598090620714" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "uuuuuuu", 
+            "llave" : "1598090620714"
+        }
+    }, 
+    "snippet" : "saveAsProject(){\n    //you can enter your own file name and extension\n    this.writeContents(this.ht, 'Sample File'+'.html', 'text/html');\n  }\n  writeContents(content, fileName, contentType) {\n    var a = document.createElement('a');\n    var file = new Blob([content], {type: contentType});\n    a.href = URL.createObjectURL(file);\n    a.download = fileName;\n    a.click();\n  }", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f41623bd58eec15c8be1aea"), 
+    "snippet" : "<div class=\"container jumbotron col-7\">\n  <div class=\"row justify-content-center\">\n<div class=\"col-7 display-4\">JavaScript</div>\n    </div><br>\n  <div class=\"row\">\n    <div class=\"col-6\">\n<div id=\"DivisionUno\">JavaScript</div>\n      <div id=\"DivisionDos\">JavaScript</div>\n            </div>\n      <div class=\"col-6\">JavaScript | lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, basado en prototipos, imperativo, débilmente tipado y dinámico.</div>\n\n    </div><!--END ROW-->\n\n</div><!--END CONTAINER-->\n<div class=\"container\">\n<div class=\"row justify-content-center\">\n<div class=\"col-7\">Codeado By Cristian M. Sguazzin</div>\n</div>\n</div><!--END CONTAINER-->", 
+    "nombre" : "mariow", 
+    "apellido" : "umanzor", 
+    "email" : "1234@gmail.com", 
+    "password" : "$2a$10$g8myN.Jf4/k/roxfiAGd0uZwrFZI66sGQfzna0orx45whP2atw0uC", 
+    "genero" : "Masculino", 
+    "contenedor" : {
+        "h2" : {
+            "h3" : {
+                "h5" : {
+                    "h6" : {
+
+                    }, 
+                    "p1" : "1598120596569"
+                }
+            }
+        }, 
+        "p1" : "1598120615291", 
+        "p2" : "1598120640385"
+    }, 
+    "proyectos" : {
+        "1598120596569" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "p1", 
+            "llave" : "1598120596569"
+        }, 
+        "1598120615291" : {
+            "html" : "<div class=\"container jumbotron col-7\">\r\n  <div class=\"row justify-content-center\">\r\n<div class=\"col-7 display-4\">JavaScript</div>\r\n    </div><br>\r\n  <div class=\"row\">\r\n    <div class=\"col-6\">\r\n<div id=\"DivisionUno\">JavaScript</div>\r\n      <div id=\"DivisionDos\">JavaScript</div>\r\n            </div>\r\n      <div class=\"col-6\">JavaScript | lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, basado en prototipos, imperativo, débilmente tipado y dinámico.</div>\r\n\r\n    </div><!--END ROW-->\r\n\r\n</div><!--END CONTAINER-->\r\n<div class=\"container\">\r\n<div class=\"row justify-content-center\">\r\n<div class=\"col-7\">Codeado By Cristian M. Sguazzin</div>\r\n</div> \r\n</div><!--END CONTAINER-->", 
+            "css" : "#DivisionUno{\r\n  display:flex;\r\n  flex-flow: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  color: white;\r\n  background-color: #3498DB;\r\n  width: 100px;\r\n  height:100px;\r\n  transition: width 2s, height 2s, background-color 4s, color 4s;\r\n}\r\n#DivisionDos{\r\n  width: 100px;\r\n  height:100px;\r\n  color: white;\r\n  text-align:center;\r\n  background-color: #3498DB;\r\n  transition: width 4s, height 2s, background-color 4s, color 4s;\r\n}\r\n.container{\r\n  width:500px;\r\n  min-width:500px;\r\n  height:400px;\r\n  min-height:400px;\r\n}", 
+            "js" : "var division= document.getElementById(\"DivisionUno\");\r\nvar divisiondos= document.getElementById(\"DivisionDos\");\r\ndivision.addEventListener(\"mouseover\", agrando);\r\ndivision.addEventListener(\"mouseout\", achicar);\r\ndivisiondos.addEventListener(\"mouseover\", agrando);\r\ndivisiondos.addEventListener(\"mouseout\", achicar);\r\n\r\nfunction agrando(){\r\n  division.setAttribute(\"style\", \"width:200px; height:200px; background-color:#F7DF1E; color:black;\");\r\n  divisiondos.setAttribute(\"style\", \"width:450px; height:30px; background-color:#F7DF1E; color:black;\");\r\n}\r\nfunction achicar(){\r\n  division.setAttribute(\"style\", \"width:100px;height:100px\");\r\n    divisiondos.setAttribute(\"style\", \"width:100px;height:100px\");\r\n}\r\n", 
+            "titulo" : "p1", 
+            "llave" : "1598120615291"
+        }, 
+        "1598120640385" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "p2", 
+            "llave" : "1598120640385"
+        }
+    }, 
+    "__v" : NumberInt(0)
+}

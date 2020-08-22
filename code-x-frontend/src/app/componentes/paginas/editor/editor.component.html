@@ -6,6 +6,8 @@
                 <div class="sidebar-heading"><img src="../../../../assets/img/logo-removebg-preview (2).png" title="blur" class="blur" style="margin-bottom: 15px;margin: 0;height: 50px;"> </div>
             </div>
             <div style="float: right;">
+                <button type="button" class="btn btn-primary" style="margin-right: 10px;" (click)=" saveAsProject()">Descargar</button>
+                <button type="button" class="btn btn-primary" style="margin-right: 10px;" (click)="snippet()">Snippet</button>
                 <button type="button" class="btn btn-primary" style="margin-right: 10px;" (click)="guardar()">Guardar</button>
                 <button type="button" class="btn btn-primary" (click)="salir()">Salir</button>
             </div>
@@ -56,6 +58,25 @@
     </div>
         <div class=" col-xl-12 col-lg-12" style="border: 0px;border-color: black;margin: 0;padding: 0;height:46.9%;">
             <!--<ngx-monaco-editor style="height:100%;width: 100%; border: 0px;margin: 0;padding:0;" [options]="editorOptions1" [(ngModel)]="code1"></ngx-monaco-editor>-->
-            <iframe #iframe id="prentar"  [srcdoc]="ht | safe: 'html'"  style="height:100%;width: 100%; border: 0px;margin: 0;padding:0;background-color: #1d1e22;"> </iframe>
+            <iframe #iframe id="prentar"  [srcdoc]="ht | safe: 'html'"  style="height:100%;width: 100%; border: 0px;margin: 0;padding:0;"> </iframe>
         </div>
 </div>
+
+<ng-template #modalSnippet let-modal >
+    <div class="modal-header" style="background-color: black;border: white ridge thin;color: white;">
+      <h4 class="modal-title" id="modal-basic-title">Snippet</h4>
+      <button type="button" style="background-color: whitesmoke;" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body " style="background-color: #252526; color: white;">
+            <textarea  [(ngModel)]="persona['snippet']" class="form-control" id="w3review" class="w-100 " style="height: 1000px;" style="background-color:#3c3c3c ; color: whitesmoke;" name="w3review" rows="20" cols="50">
+            
+            </textarea>
+            
+    </div>
+    <div class="modal-footer" style="background-color: #252526;">
+      <button type="button" class="btn btn-info" (click)="guardar();modal.close('Cerrar')">Guardar Snippet</button>
+      <button type="button" class="btn btn-secondary" (click)="modal.close('Cerrar')">Cerrar</button>
+    </div>
+  </ng-template>

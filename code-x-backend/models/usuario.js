@@ -21,6 +21,12 @@ var esquema= new mongoose.Schema({
         trim:true,
         unique:true,
         default:{}
+    },
+    snippet:{
+        type:String,
+        trim:true,
+        unique:true,
+        default:""
     }
 
 },{ minimize: false });

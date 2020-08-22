@@ -1,21 +1,17 @@
-<body class="hero limiter wrap-login100 ">
+<body class="padre ">
   <div class="container copia" >
   <form [formGroup]='formularioReg'  style="padding-left: 30px;padding-right: 30px;border:1px solid #ccc; border-radius: 20px;background-color: #ffffff;box-shadow: 0 22px 30px 0 rgba(0,0,0,0.50);" >
     <div class="container">
-      <h3 class="texto">Registro de usuarios</h3>
+      <h3 class="texto">Regidtro de  Usuario</h3>
       <hr>
-
       <input formControlName='nombre'  type="text" placeholder="Nombre" name="text" required style="border-radius: 20px;">
-
       <input formControlName='apellido' type="text" placeholder="Apellido" name="apellido" required style="border-radius: 20px;">
-
       <input formControlName='email' type="text" placeholder="Correo" name="correo" required style="border-radius: 20px;" data-toggle="tooltip"  title="Ingrese la dirección de su Email" pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$">
-
       <input formControlName='password' type="password" placeholder="Password" name="psw" required style="border-radius: 20px;">
-
-      <input formControlName='confirmarPassword' type="password" placeholder="Confirmar password" id="psw" required style="border-radius: 20px;">
+      <input formControlName='confirmarPassword'style=" outline: none;" [ngStyle]="{'border': !valida(formularioReg) ? 'red solid': 'green'}"  type="password" placeholder="Confirmar password" id="psw" required style="border-radius: 20px;">
+      
       <input  type="hidden" >
-      <select formControlName='genero' style="border-radius: 20px;" style="width: 120px;" >
+      <select formControlName='genero' style="border-radius: 20px;"  >
           <option disabled selected>Genero</option>
           <option value="Masculino">Masculino</option>
           <option value="Femenino">Femenino</option>
