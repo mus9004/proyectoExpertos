@@ -4,6 +4,7 @@ var router = express.Router();
 usuario = require('../models/usuario');
 const bcrypt = require('bcryptjs');
 const jwt= require('jsonwebtoken');
+const  mongoose  = require('mongoose');
 //const verifyToken = require('./verificarToken');
 const secret= 'expertos912';
 //const verificarToken = require('./verificarToken')
@@ -14,6 +15,7 @@ router.post('/', function(req, res) {
     
     let u=new usuario(
         {
+            _id:mongoose.Types.ObjectId(),
             nombre: req.body.nombre,
             apellido: req.body.apellido,
             email:req.body.email,
@@ -21,7 +23,8 @@ router.post('/', function(req, res) {
             genero: req.body.genero,
             contenedor:req.body.contenedor,
             proyectos:req.body.proyectos,
-            snippet:req.body.snippet
+            snippet:req.body.snippet,
+            cantidadProtectos:req.body.cantidadProtectos
         }
     )  
     
@@ -88,7 +91,8 @@ router.post('/:id',function(req,res){
             apellido: req.body.apellido,
             email:req.body.email,
             password:bcrypt.hashSync(req.body.password),
-            genero:req.body.genero
+            genero:req.body.genero,
+            cantidadProtectos:req.body.cantidadProtectos
            
         }
     ).then(result=>{
@@ -108,7 +112,8 @@ router.put('/update/:id',function(req,res){
         {
             contenedor:req.body.contenedor,
             proyectos:req.body.proyectos,
-            snippet:req.body.snippet 
+            snippet:req.body.snippet,
+            cantidadProtectos:req.body.cantidadProtectos 
         }
     ).then(result=>{
         res.send(result);
@@ -156,7 +161,8 @@ router.put('/update/:id',function(req,res){
             password:bcrypt.hashSync(req.body.password),
             genero: req.body.genero,
             contenedor:req.body.contenedor,
-            proyectos:req.body.proyectos  
+            proyectos:req.body.proyectos,  
+            cantidadProtectos:req.body.cantidadProtectos
         }}
     ).then(result=>{
         console.log(result);
