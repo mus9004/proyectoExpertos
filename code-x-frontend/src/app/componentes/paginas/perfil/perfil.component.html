@@ -16,14 +16,15 @@
       </select>
       <div class="clearfix">
         
+        <button (click)="salir()" type="button" class="btn btn-success" style="border-radius: 20px;margin-left: 5px;">Salir</button>
         <button (click)="guardar()" type="button" class="btn btn-success" style="border-radius: 20px;margin-left: 5px;">Actualizar</button>
         <button (click)="cambiarPws()" type="button" class="btn btn-success" style="border-radius: 20px;margin-left: 5px;">Cambiar password</button>
-        <button (click)="salir()" type="button" class="btn btn-success" style="border-radius: 20px;margin-left: 5px;">Salir</button>
+        <button (click)="pago()" type="button" class="btn btn-success" style="border-radius: 20px;margin-left: 5px;">Forma de Pago</button>
       </div>
     </div>
   </form>
   </div>
-
+<!------//////////////////////////modal Password///////////////////////////////--------->
   <ng-template #modalPassword let-modal>
     <div class="modal-header" >
       <h4 class="modal-title" id="modal-basic-title">Cambiar Password</h4>
@@ -41,5 +42,34 @@
       <button type="button" class="btn btn-outline-dark" (click)="modal.close('Cerrar')">Cerrar</button>
     </div>
   </ng-template>
+<!------////////////////////////////forma de pago///////////////////////////////////////////////------->
+  <ng-template #modalFormaPago let-modal style="background-color: #fafafa;" >
+    <div class="modal-header" >
+      <h4 class="modal-title" id="modal-basic-title">Informacion de Pago</h4>
+     
+    </div>
+    <div class="modal-body">
+      <div id="zona-productos" class="card p-3" style="border-radius: 12px;">
+  <!---------------------------------------------------------------------------------->
+  <label for="psw">Numero de Tarjeta:</label>
+  <input type="text" id="psw" (click)="$event.target.select()" placeholder="" name="psw" required style="border-radius: 20px;">
+  <label for="date">Fecha de Expiracion:</label>
+  <input type="date"  name="" style=" outline: none;"  placeholder="" id="date" required style="border-radius: 20px;">
+  <label for="CodSeguridad">Codigo de seguridad(CVV2):</label>
+  <input type="text"  name="" style=" outline: none;"  placeholder="" id="CodSeguridad" required style="border-radius: 20px;">
 
+  <label for="proyectos">Cantidad de Proyectos:</label>
+<select [(ngModel)]="cantidadProyectos" id='proyectos'>
+  <option value="100">100 Proyectos</option> 
+  <option value="500">500 Proyectos</option> 
+  <option value="1000">1000 Proyectos</option> 
+</select>
+<span>Para que los cambios se guarden precione el boton de Actualizar en la siguiente ventana</span>
+  <!---------------------------------------------------------------------------------->
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Cerrar')">Cerrar/Salvar</button>
+    </div>
+  </ng-template>
   </body>

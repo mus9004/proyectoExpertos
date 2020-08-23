@@ -17,10 +17,11 @@ export class PerfilComponent implements OnInit {
   backendHost: string = 'http://localhost:3000';
 
   @ViewChild ('modalPassword') modalPassword;
- 
+  @ViewChild ('modalFormaPago') modalFormaPago;
   persona: any;
   confirmar="";
   pass="";
+  cantidadProyectos="";
   constructor(
     private httpClient: HttpClient,
     private router: Router, 
@@ -99,7 +100,10 @@ export class PerfilComponent implements OnInit {
       if ((this.pass=="") || (isNull(this.pass)) || (this.pass.startsWith(' ')))  {
         console.log("no fue agregado!!!")
       }else{arreglo.password=this.pass}
-      
+      if (this.cantidadProyectos!="") {
+        arreglo.cantidadProtectos=this.cantidadProyectos
+
+      }
       this.httpClient.post(`${this.backendHost}/usuarios/${localStorage.getItem('id')}`, arreglo)
       .subscribe(( res: any) => {
         console.log(res)
@@ -114,6 +118,9 @@ export class PerfilComponent implements OnInit {
   }
 
   actualizar(objeto) {
+    console.log();
+    
+    
     this.httpClient.put(`${this.backendHost}/usuarios/update/${this.persona._id}`,objeto)
     .subscribe((res: any) => {
       console.log(res)
@@ -135,5 +142,7 @@ export class PerfilComponent implements OnInit {
     this.modalService.open(this.modalPassword, {size: 'lg'});
   }
 
-
+  pago(){
+    this.modalService.open(this.modalFormaPago, {size: 'sm'});
+  }
 }

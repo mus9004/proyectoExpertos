@@ -6,29 +6,26 @@ var esquema= new mongoose.Schema({
     email: {
         type:String,
         trim:true,
-        unique:true
+
     },
     password:String,
     genero:String,
     contenedor:{
         type:mongoose.SchemaTypes.Mixed,
         trim:true,
-        unique:true,
         default:{}
     },
     proyectos:{
         type:mongoose.SchemaTypes.Mixed,
         trim:true,
-        unique:true,
         default:{}
     },
     snippet:{
         type:String,
         trim:true,
-        unique:true,
         default:""
-    }
-
+    },
+    cantidadProtectos:String
 },{ minimize: false });
 
 module.exports=mongoose.model('usuarios', esquema);

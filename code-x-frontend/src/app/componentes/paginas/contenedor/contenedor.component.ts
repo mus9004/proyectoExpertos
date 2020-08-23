@@ -39,10 +39,22 @@ export class ContenedorComponent implements OnInit {
     } else{
       
       if (campo) {
-        this.agregar(this.keys.slice(),this.persona.contenedor,this.persona.proyectos,this.textoDeInput,x)
-        this.actualizar(this.persona)
-        this.leerProyecto()
-      } else {
+        let x2:number=this.persona['cantidadProtectos']
+        let x3=0;
+        for (const key in this.objetos[0]) {
+          x3+=1
+        }
+        console.log(x2, (x2>this.objetos.length),x3)
+        if (x2>x3) {/////////verifica la cantidad de proyectos////////
+          this.agregar(this.keys.slice(),this.persona.contenedor,this.persona.proyectos,this.textoDeInput,x)
+          //this.persona['cantidadProtectos']=this.persona['cantidadProtectos']+1
+          this.actualizar(this.persona)
+          this.leerProyecto()
+        } else{
+          this.toastr.warning('Code-x-Error', 'Llego a su cantidad de proyectos Maxima, adquiera un nuevo plan');
+        }
+
+      } else {///////////////////////////agrega carpetas///////////////////////////
         this.agregar(this.keys.slice(),this.persona.contenedor,this.persona.proyectos,this.textoDeInput,{})
         this.actualizar(this.persona)
         this.leerProyecto()

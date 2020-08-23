@@ -68,8 +68,9 @@ export class RegistroComponent implements OnInit {
       arreglo.contenedor={}
       arreglo.proyectos={}
       arreglo.snippet=""
+      arreglo.cantidadProtectos='5'
      // console.log(arreglo)
-      this.httpClient.post(`${this.backendHost}/usuarios`, arreglo)
+      this.httpClient.post(`${this.backendHost}/usuarios/`, arreglo)
       .subscribe(( res: any) => {
         console.log(res)
       if (res.code==11000) {
