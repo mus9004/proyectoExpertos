@@ -1,0 +1,327 @@
+{ 
+    "_id" : ObjectId("5f41be8620c5c6261ca80005"), 
+    "snippet" : "", 
+    "nombre" : "Jose", 
+    "apellido" : "umanzor", 
+    "email" : "mmm@yahoo.com", 
+    "password" : "$2a$10$5bY8AtW0hE4GHCVqOkvPV.fgkp5bUbrOD1JQJhmQcuBydxT4FlWc.", 
+    "genero" : "Masculino", 
+    "contenedor" : {
+
+    }, 
+    "proyectos" : {
+
+    }, 
+    "cantidadProtectos" : "10", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f41c6aebbceaf3a3037609b"), 
+    "snippet" : "", 
+    "nombre" : "jorge3", 
+    "apellido" : "sandoval3", 
+    "email" : "mmmm@gmail.com", 
+    "password" : "$2a$10$Am2.oCbCMmrzaADF1.aAruigTrFm2fKfRs.e4RbEPtUQKuwLDBQey", 
+    "genero" : "Masculino", 
+    "contenedor" : {
+        "11" : "1598147244224", 
+        "54" : {
+
+        }, 
+        "123" : {
+
+        }
+    }, 
+    "proyectos" : {
+        "1598147244224" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "11", 
+            "llave" : "1598147244224"
+        }
+    }, 
+    "cantidadProtectos" : "10", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f41c6e9bbceaf3a3037609f"), 
+    "snippet" : "", 
+    "nombre" : "mario", 
+    "apellido" : "333", 
+    "email" : "mmm33@yahoo.com", 
+    "password" : "$2a$10$3al9pbcpWghQmHcsfrwI7uaHsN85KTaMA1bEOBrNyDv/nWxJV2PdG", 
+    "genero" : "Masculino", 
+    "contenedor" : {
+
+    }, 
+    "proyectos" : {
+
+    }, 
+    "cantidadProtectos" : "10", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f41dc25bbceaf3a303760a1"), 
+    "snippet" : "", 
+    "nombre" : "nino", 
+    "apellido" : "umanzor", 
+    "email" : "nino@gmail.com", 
+    "password" : "$2a$10$uYKBwtt4mFbwaD5GEGmbxeEmF5zLtDT/5JjzLySkKdvxnUNj1RXDq", 
+    "genero" : "Masculino", 
+    "contenedor" : {
+        "2" : "1598151780018", 
+        "4" : "1598151791856", 
+        "5" : "1598151786752", 
+        "11" : "1598151772230", 
+        "33" : "1598151767878", 
+        "45" : "1598151796962", 
+        "66" : "1598151801866", 
+        "111" : "1598151806076", 
+        "444" : "1598152190601", 
+        "666" : "1598152025245", 
+        "1111" : "1598151776736", 
+        "4444" : "1598152004148", 
+        "5555" : "1598151817152", 
+        "11122" : "1598151811592", 
+        "yyy" : "1598151966504", 
+        "444yyyyyy" : "1598152271598", 
+        "dd" : {
+
+        }
+    }, 
+    "proyectos" : {
+        "1598151767878" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "33", 
+            "llave" : "1598151767878"
+        }, 
+        "1598151772230" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "11", 
+            "llave" : "1598151772230"
+        }, 
+        "1598151776736" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "1111", 
+            "llave" : "1598151776736"
+        }, 
+        "1598151780018" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "2", 
+            "llave" : "1598151780018"
+        }, 
+        "1598151783238" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "4", 
+            "llave" : "1598151783238"
+        }, 
+        "1598151786752" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "5", 
+            "llave" : "1598151786752"
+        }, 
+        "1598151791856" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "4", 
+            "llave" : "1598151791856"
+        }, 
+        "1598151796962" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "45", 
+            "llave" : "1598151796962"
+        }, 
+        "1598151801866" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "66", 
+            "llave" : "1598151801866"
+        }, 
+        "1598151806076" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "111", 
+            "llave" : "1598151806076"
+        }, 
+        "1598151811592" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "11122", 
+            "llave" : "1598151811592"
+        }, 
+        "1598151817152" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "5555", 
+            "llave" : "1598151817152"
+        }, 
+        "1598151966504" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "yyy", 
+            "llave" : "1598151966504"
+        }, 
+        "1598152004148" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "4444", 
+            "llave" : "1598152004148"
+        }, 
+        "1598152025245" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "666", 
+            "llave" : "1598152025245"
+        }, 
+        "1598152190601" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "444", 
+            "llave" : "1598152190601"
+        }, 
+        "1598152271598" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "444yyyyyy", 
+            "llave" : "1598152271598"
+        }
+    }, 
+    "cantidadProtectos" : "10", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f41dffdbbceaf3a303760a3"), 
+    "snippet" : "<div class=\"container jumbotron col-7\">\n  <div class=\"row justify-content-center\">\n<div class=\"col-7 display-4\">JavaScript</div>\n    </div><br>\n  <div class=\"row\">\n    <div class=\"col-6\">\n<div id=\"DivisionUno\">JavaScript</div>\n      <div id=\"DivisionDos\">JavaScript</div>\n            </div>\n      <div class=\"col-6\">JavaScript | lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, basado en prototipos, imperativo, débilmente tipado y dinámico.</div>\n\n    </div><!--END ROW-->\n\n</div><!--END CONTAINER-->\n<div class=\"container\">\n<div class=\"row justify-content-center\">\n<div class=\"col-7\">Codeado By Cristian M. Sguazzin</div>\n</div>\n</div><!--END CONTAINER-->", 
+    "nombre" : "miguel", 
+    "apellido" : "umanzor", 
+    "email" : "miguel@yahoo.com", 
+    "password" : "$2a$10$jY5pp/kh6hQrd5l5ESc6muM63HO.8KHHURxckuWIh0HoH5GxN1ske", 
+    "genero" : "Masculino", 
+    "contenedor" : {
+        "p1" : "1598152798488", 
+        "c1" : {
+            "c2" : {
+                "c3" : {
+                    "p4" : "1598152875701"
+                }
+            }
+        }, 
+        "p3" : "1598152863243"
+    }, 
+    "proyectos" : {
+        "1598152798488" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "p1", 
+            "llave" : "1598152798488"
+        }, 
+        "1598152863243" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "p3", 
+            "llave" : "1598152863243"
+        }, 
+        "1598152875701" : {
+            "html" : "<div class=\"container jumbotron col-7\">\r\n  <div class=\"row justify-content-center\">\r\n<div class=\"col-7 display-4\">JavaScript</div>\r\n    </div><br>\r\n  <div class=\"row\">\r\n    <div class=\"col-6\">\r\n<div id=\"DivisionUno\">JavaScript</div>\r\n      <div id=\"DivisionDos\">JavaScript</div>\r\n            </div>\r\n      <div class=\"col-6\">JavaScript | lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, basado en prototipos, imperativo, débilmente tipado y dinámico.</div>\r\n\r\n    </div><!--END ROW-->\r\n\r\n</div><!--END CONTAINER-->\r\n<div class=\"container\">\r\n<div class=\"row justify-content-center\">\r\n<div class=\"col-7\">Codeado By Cristian M. Sguazzin</div>\r\n</div>\r\n</div><!--END CONTAINER-->", 
+            "css" : "#DivisionUno{\r\n  display:flex;\r\n  flex-flow: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  color: white;\r\n  background-color: #3498DB;\r\n  width: 100px;\r\n  height:100px;\r\n  transition: width 2s, height 2s, background-color 4s, color 4s;\r\n}\r\n#DivisionDos{\r\n  width: 100px;\r\n  height:100px;\r\n  color: white;\r\n  text-align:center;\r\n  background-color: #3498DB;\r\n  transition: width 4s, height 2s, background-color 4s, color 4s;\r\n}\r\n.container{\r\n  width:500px;\r\n  min-width:500px;\r\n  height:400px;\r\n  min-height:400px;\r\n}", 
+            "js" : "var division= document.getElementById(\"DivisionUno\");\r\nvar divisiondos= document.getElementById(\"DivisionDos\");\r\ndivision.addEventListener(\"mouseover\", agrando);\r\ndivision.addEventListener(\"mouseout\", achicar);\r\ndivisiondos.addEventListener(\"mouseover\", agrando);\r\ndivisiondos.addEventListener(\"mouseout\", achicar);\r\n\r\nfunction agrando(){\r\n  division.setAttribute(\"style\", \"width:200px; height:200px; background-color:#F7DF1E; color:black;\");\r\n  divisiondos.setAttribute(\"style\", \"width:450px; height:30px; background-color:#F7DF1E; color:black;\");\r\n}\r\nfunction achicar(){\r\n  division.setAttribute(\"style\", \"width:100px;height:100px\");\r\n    divisiondos.setAttribute(\"style\", \"width:100px;height:100px\");\r\n}", 
+            "titulo" : "p4", 
+            "llave" : "1598152875701"
+        }
+    }, 
+    "cantidadProtectos" : "5", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f41e233bbceaf3a303760a5"), 
+    "snippet" : "var division= document.getElementById(\"DivisionUno\");\nvar divisiondos= document.getElementById(\"DivisionDos\");\ndivision.addEventListener(\"mouseover\", agrando);\ndivision.addEventListener(\"mouseout\", achicar);\ndivisiondos.addEventListener(\"mouseover\", agrando);\ndivisiondos.addEventListener(\"mouseout\", achicar);\n\nfunction agrando(){\n  division.setAttribute(\"style\", \"width:200px; height:200px; background-color:#F7DF1E; color:black;\");\n  divisiondos.setAttribute(\"style\", \"width:450px; height:30px; background-color:#F7DF1E; color:black;\");\n}\nfunction achicar(){\n  division.setAttribute(\"style\", \"width:100px;height:100px\");\n    divisiondos.setAttribute(\"style\", \"width:100px;height:100px\");\n}", 
+    "nombre" : "tito", 
+    "apellido" : "sanchez", 
+    "email" : "tito@gmail.com", 
+    "password" : "$2a$10$kNUp4TnYGwguUP6AeWVMBed6xTk7.UdQtMnGsgxz6XST1JORGdnEG", 
+    "genero" : "Masculino", 
+    "contenedor" : {
+        "3" : "1598153651531", 
+        "p1" : "1598153319885", 
+        "p2" : "1598153326265", 
+        "c1" : {
+            "c3" : {
+                "c4" : {
+                    "p4" : "1598153363910"
+                }
+            }
+        }, 
+        "c2" : {
+            "c4" : {
+
+            }
+        }, 
+        "d1" : "1598153689603"
+    }, 
+    "proyectos" : {
+        "1598153319885" : {
+            "html" : "<div class=\"container jumbotron col-7\">\r\n  <div class=\"row justify-content-center\">\r\n<div class=\"col-7 display-4\">JavaScript</div>\r\n    </div><br>\r\n  <div class=\"row\">\r\n    <div class=\"col-6\">\r\n<div id=\"DivisionUno\">JavaScript</div>\r\n      <div id=\"DivisionDos\">JavaScript</div>\r\n            </div>\r\n      <div class=\"col-6\">JavaScript | lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, basado en prototipos, imperativo, débilmente tipado y dinámico.</div>\r\n\r\n    </div><!--END ROW-->\r\n\r\n</div><!--END CONTAINER-->\r\n<div class=\"container\">\r\n<div class=\"row justify-content-center\">\r\n<div class=\"col-7\">Codeado By Cristian M. Sguazzin</div>\r\n</div>\r\n</div><!--END CONTAINER-->", 
+            "css" : "#DivisionUno{\r\n  display:flex;\r\n  flex-flow: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  color: white;\r\n  background-color: #3498DB;\r\n  width: 100px;\r\n  height:100px;\r\n  transition: width 2s, height 2s, background-color 4s, color 4s;\r\n}\r\n#DivisionDos{\r\n  width: 100px;\r\n  height:100px;\r\n  color: white;\r\n  text-align:center;\r\n  background-color: #3498DB;\r\n  transition: width 4s, height 2s, background-color 4s, color 4s;\r\n}\r\n.container{\r\n  width:500px;\r\n  min-width:500px;\r\n  height:400px;\r\n  min-height:400px;\r\n}", 
+            "js" : "var division= document.getElementById(\"DivisionUno\");\r\nvar divisiondos= document.getElementById(\"DivisionDos\");\r\ndivision.addEventListener(\"mouseover\", agrando);\r\ndivision.addEventListener(\"mouseout\", achicar);\r\ndivisiondos.addEventListener(\"mouseover\", agrando);\r\ndivisiondos.addEventListener(\"mouseout\", achicar);\r\n\r\nfunction agrando(){\r\n  division.setAttribute(\"style\", \"width:200px; height:200px; background-color:#F7DF1E; color:black;\");\r\n  divisiondos.setAttribute(\"style\", \"width:450px; height:30px; background-color:#F7DF1E; color:black;\");\r\n}\r\nfunction achicar(){\r\n  division.setAttribute(\"style\", \"width:100px;height:100px\");\r\n    divisiondos.setAttribute(\"style\", \"width:100px;height:100px\");\r\n}", 
+            "titulo" : "p1", 
+            "llave" : "1598153319885"
+        }, 
+        "1598153326265" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "p2", 
+            "llave" : "1598153326265"
+        }, 
+        "1598153363910" : {
+            "html" : "<div class=\"container jumbotron col-7\">\r\n  <div class=\"row justify-content-center\">\r\n<div class=\"col-7 display-4\">JavaScript</div>\r\n    </div><br>\r\n  <div class=\"row\">\r\n    <div class=\"col-6\">\r\n<div id=\"DivisionUno\">JavaScript</div>\r\n      <div id=\"DivisionDos\">JavaScript</div>\r\n            </div>\r\n      <div class=\"col-6\">JavaScript | lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, basado en prototipos, imperativo, débilmente tipado y dinámico.</div>\r\n\r\n    </div><!--END ROW-->\r\n\r\n</div><!--END CONTAINER-->\r\n<div class=\"container\">\r\n<div class=\"row justify-content-center\">\r\n<div class=\"col-7\">Codeado By Cristian M. Sguazzin</div>\r\n</div>\r\n</div><!--END CONTAINER-->", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "p4", 
+            "llave" : "1598153363910"
+        }, 
+        "1598153651531" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "3", 
+            "llave" : "1598153651531"
+        }, 
+        "1598153689603" : {
+            "html" : "", 
+            "css" : "", 
+            "js" : "", 
+            "titulo" : "d1", 
+            "llave" : "1598153689603"
+        }
+    }, 
+    "cantidadProtectos" : "100", 
+    "__v" : NumberInt(0)
+}
